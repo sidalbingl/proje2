@@ -1,0 +1,90 @@
+import pandas as pd
+from Insan import Insan
+from Issiz import Issiz
+from Calisan import Calisan
+from MaviYaka import MaviYaka
+from BeyazYaka import BeyazYaka
+
+insan1 = Insan("12345678901", "Ali", "Caliskan", 30, "Erkek", "Türk")
+insan2 = Insan("98765432109", "Ayşe", "Bilici", 25, "Kadın", "Türk")
+print("insan1:", insan1)
+print(" ")
+print("insan2:", insan2)
+print(" ")
+
+issiz1 = Issiz("111111111", "Ali", "Ugurlu", 35, "Erkek", "Türk", "mavi yaka")
+issiz2 = Issiz("222222222", "Ece", "Beyaz", 28, "Kadın", "Türk", "beyaz yaka")
+issiz3 = Issiz("333333333", "Mehmet", "Can", 32, "Erkek", "Türk", "yönetici")
+print("issiz1:", issiz1)
+print("issiz2:", issiz2)
+print("issiz3:", issiz3)
+print(" ")
+
+calisan1 = Calisan("444444444", "Fatma", "Yildiz", 28, "Kadın", "Türk", "teknoloji", 3, 12000)
+calisan2 = Calisan("555555555", "Ahmet", "Yılmaz", 35, "Erkek", "Türk", "muahasebe", 5, 18000)
+calisan3 = Calisan("666666666", "Ayla", "Isik", 32, "Kadın", "Türk", "inşaat", 7, 22000)
+print("calisan1:", calisan1)
+print("calisan2:", calisan2)
+print("calisan3:", calisan3)
+print(" ")
+
+maviyaka1 = MaviYaka("77777777777", "Yusuf", "Yılmaz", 30, "Erkek", "Türk", "Gıda", 3, 20000, 1000)
+maviyaka2 = MaviYaka("88888888888", "Deniz", "Kara", 28, "Kadın", "Türk", "Tekstil", 2, 12000, 800)
+maviyaka3 = MaviYaka("99999999999", "Alp", "Demir", 35, "Erkek", "Türk", "Otomotiv", 5, 22000, 1200)
+print("maviyaka1:", maviyaka1)
+print("maviyaka2:", maviyaka2)
+print("maviyaka3:", maviyaka3)
+print(" ")
+
+beyazyaka1 = BeyazYaka("12345678901", "Yigit", "Kara", 32, "Erkek", "Türk", "Finans", 3, 25000, 5000)
+beyazyaka2 = BeyazYaka("98765432109", "Nurefşan", "Kaya", 28, "Kadın", "Türk", "Bilişim", 2, 12000, 2000)
+beyazyaka3 = BeyazYaka("45678912304", "Berkay", "Arslan", 35, "Erkek", "Türk", "Eğitim", 5, 18000, 3000)
+print("beyazyaka1:", beyazyaka1)
+print("beyazyaka2:", beyazyaka2)
+print("beyazyaka3:", beyazyaka3)
+
+#DataFrame oluşturma
+data = {
+    "nesne_değeri": ["çalışan1", "çalışan2", "çalışan3", "maviyaka1","maviyaka2", "maviyaka3",
+                     "beyazyaka1", "beyazyaka2","beyazyaka3"],
+    "tc_no": [calisan1.get_tc_no(), calisan2.get_tc_no(), calisan3.get_tc_no(), maviyaka1.get_tc_no(), maviyaka2.get_tc_no(),
+              maviyaka3.get_tc_no(), beyazyaka1.get_tc_no(), beyazyaka2.get_tc_no(), beyazyaka3.get_tc_no()],
+    "ad": [calisan1.get_ad(), calisan2.get_ad(), calisan3.get_ad(), maviyaka1.get_ad(), maviyaka2.get_ad(), maviyaka3.get_ad(),
+           beyazyaka1.get_ad(), beyazyaka2.get_ad(), beyazyaka3.get_ad()],
+    "soyad": [calisan1.get_soyad(), calisan2.get_soyad(), calisan3.get_soyad(), maviyaka1.get_soyad(), maviyaka2.get_soyad(),
+              maviyaka3.get_soyad(), beyazyaka1.get_ad(), beyazyaka2.get_soyad(), beyazyaka3.get_soyad()],
+    "yas": [calisan1.get_yas(), calisan2.get_yas(), calisan3.get_yas(), maviyaka1.get_yas(), maviyaka2.get_yas(),
+            maviyaka3.get_yas(), beyazyaka1.get_yas(), beyazyaka2.get_yas(), beyazyaka3.get_yas()],
+    "cinsiyet": [calisan1.get_cinsiyet(), calisan2.get_cinsiyet(), calisan3.get_cinsiyet(), maviyaka1.get_cinsiyet(),
+                 maviyaka2.get_cinsiyet(), maviyaka3.get_cinsiyet(), beyazyaka1.get_cinsiyet(), beyazyaka2.get_cinsiyet(),
+                 beyazyaka3.get_cinsiyet()],
+    "uyruk": [calisan1.get_uyruk(), calisan2.get_uyruk(), calisan3.get_uyruk(), maviyaka1.get_uyruk(), maviyaka2.get_uyruk(),
+              maviyaka3.get_uyruk(), beyazyaka1.get_uyruk(), beyazyaka2.get_uyruk(), beyazyaka3.get_uyruk()],
+    "sektör": [calisan1.get_sektor(), calisan2.get_sektor(), calisan3.get_sektor(), maviyaka1.get_sektor(), maviyaka2.get_sektor(),
+               maviyaka3.get_sektor(), beyazyaka1.get_sektor(), beyazyaka2.get_sektor(), beyazyaka3.get_sektor()],
+    "tecrübe": [calisan1.get_tecrube(), calisan2.get_tecrube(), calisan3.get_tecrube(), maviyaka1.get_tecrube(), maviyaka2.get_tecrube(),
+                maviyaka3.get_tecrube(), beyazyaka1.get_tecrube(), beyazyaka2.get_tecrube(), beyazyaka3.get_tecrube()],
+    'maaş': [calisan1.get_maas(), calisan2.get_maas(), calisan3.get_maas(), maviyaka1.get_maas(), maviyaka2.get_maas(),
+             maviyaka3.get_maas(), beyazyaka1.get_maas(), beyazyaka2.get_maas(), beyazyaka3.get_maas()],
+    'yıpranma_payı': [0, 0, 0, maviyaka1.get_yipranma_payi(), maviyaka2.get_yipranma_payi(), maviyaka3.get_yipranma_payi(), 0,
+                      0, 0],
+    'teşvik_primi': [0, 0, 0, 0, 0, 0, beyazyaka1.get_tesvik_primi(), beyazyaka2.get_tesvik_primi(), beyazyaka3.get_tesvik_primi()],
+    'yeni_maaş': [calisan1.zam_hakki(), calisan2.zam_hakki(), calisan3.zam_hakki(), maviyaka1.zam_hakki(), maviyaka2.zam_hakki(),
+                  maviyaka3.zam_hakki(), beyazyaka1.zam_hakki(), beyazyaka2.zam_hakki(), beyazyaka3.zam_hakki()]
+}
+
+df = pd.DataFrame(data)
+df.fillna(0, inplace=True)
+gruplandirilan_df = df.groupby('nesne_değeri').agg({'tecrübe': 'mean', 'yeni_maaş': 'mean'})
+print(gruplandirilan_df)
+toplam_kisi = df[df['maaş'] > 15000]['maaş'].count()
+print("Maasi 15000'den fazla olan kisi sayisi:", toplam_kisi)
+siralanmis_df = df.sort_values('yeni_maaş')
+print("yeni maas:", siralanmis_df)
+beyazyaka_tecrube = df[(df['nesne_değeri'] == 'beyaz yaka') & (df['tecrübe'] > 3)]
+print("3 seneden fazla tecrubeye sahip beyaz yakalilar:", beyazyaka_tecrube.to_string())
+filtrelenmis_df = df[(df['yeni_maaş'] > 10000)].iloc[1:6, [1, 11]]
+print(filtrelenmis_df)
+yeni_df = df[['ad', 'soyad', 'sektör', 'yeni_maaş']]
+print(yeni_df)
+
