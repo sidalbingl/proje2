@@ -38,7 +38,7 @@ print(" ")
 
 beyazyaka1 = BeyazYaka("12345678901", "Yigit", "Kara", 32, "Erkek", "Türk", "Finans", 3, 25000, 5000)
 beyazyaka2 = BeyazYaka("98765432109", "Nurefşan", "Kaya", 28, "Kadın", "Türk", "Bilişim", 2, 12000, 2000)
-beyazyaka3 = BeyazYaka("45678912304", "Berkay", "Arslan", 35, "Erkek", "Türk", "Eğitim", 5, 18000, 3000)
+beyazyaka3 = BeyazYaka("45678912304", "Alper", "Arslan", 35, "Erkek", "Türk", "Eğitim", 5, 18000, 3000)
 print("beyazyaka1:", beyazyaka1)
 print("beyazyaka2:", beyazyaka2)
 print("beyazyaka3:", beyazyaka3)
